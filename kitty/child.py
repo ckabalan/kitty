@@ -14,6 +14,7 @@ from typing import (
 import kitty.fast_data_types as fast_data_types
 
 from .constants import is_macos, shell_path, terminfo_dir
+from .types import run_once
 
 try:
     from typing import TypedDict
@@ -23,8 +24,9 @@ except ImportError:
 
 if is_macos:
     from kitty.fast_data_types import (
-            cmdline_of_process, cwd_of_process as _cwd, environ_of_process as _environ_of_process,
-            process_group_map as _process_group_map
+        cmdline_of_process, cwd_of_process as _cwd,
+        environ_of_process as _environ_of_process,
+        process_group_map as _process_group_map
     )
 
     def cwd_of_process(pid: int) -> str:
@@ -70,14 +72,9 @@ else:
         return ans
 
 
+@run_once
 def checked_terminfo_dir() -> Optional[str]:
-    q = getattr(checked_terminfo_dir, 'ans', False)
-    if q is False:
-        ans = terminfo_dir if os.path.isdir(terminfo_dir) else None
-        setattr(checked_terminfo_dir, 'ans', ans)
-    else:
-        ans = q
-    return ans
+    return terminfo_dir if os.path.isdir(terminfo_dir) else None
 
 
 def processes_in_group(grp: int) -> List[int]:
