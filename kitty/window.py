@@ -857,7 +857,8 @@ class Window:
     def mouse_click_url_or_select(self) -> None:
         '@ac:mouse: Click the URL under the mouse only if the screen has no selection'
         if not self.screen.has_selection():
-            self.mouse_click_url()
+            if not click_mouse_url(self.os_window_id, self.tab_id, self.id):
+                pass  # no URL found
 
     def mouse_selection(self, code: int) -> None:
         '''
