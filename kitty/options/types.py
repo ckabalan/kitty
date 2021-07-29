@@ -432,18 +432,18 @@ option_names = (  # {{{
 
 
 class Options:
-    active_border_color: typing.Optional[kitty.rgb.Color] = Color(red=0, green=255, blue=0)
+    active_border_color: typing.Union[kitty.rgb.Color, None] = Color(red=0, green=255, blue=0)
     active_tab_background: Color = Color(red=238, green=238, blue=238)
     active_tab_font_style: typing.Tuple[bool, bool] = (True, True)
     active_tab_foreground: Color = Color(red=0, green=0, blue=0)
-    active_tab_title_template: typing.Optional[str] = None
+    active_tab_title_template: typing.Union[str, None] = None
     adjust_baseline: typing.Union[int, float] = 0
     adjust_column_width: typing.Union[int, float] = 0
     adjust_line_height: typing.Union[int, float] = 0
     allow_hyperlinks: int = 1
     allow_remote_control: str = 'n'
     background: Color = Color(red=0, green=0, blue=0)
-    background_image: typing.Optional[str] = None
+    background_image: typing.Union[str, None] = None
     background_image_layout: choices_for_background_image_layout = 'tiled'
     background_image_linear: bool = False
     background_opacity: float = 1.0
@@ -465,7 +465,7 @@ class Options:
     cursor_blink_interval: float = -1.0
     cursor_shape: int = 1
     cursor_stop_blinking_after: float = 15.0
-    cursor_text_color: typing.Optional[kitty.rgb.Color] = Color(red=17, green=17, blue=17)
+    cursor_text_color: typing.Union[kitty.rgb.Color, None] = Color(red=17, green=17, blue=17)
     cursor_underline_thickness: float = 2.0
     default_pointer_shape: choices_for_default_pointer_shape = 'beam'
     detect_urls: bool = True
@@ -525,14 +525,14 @@ class Options:
     scrollback_pager_history_size: int = 0
     select_by_word_characters: str = '@-./_~?&=%+#'
     selection_background: Color = Color(red=255, green=250, blue=205)
-    selection_foreground: typing.Optional[kitty.rgb.Color] = Color(red=0, green=0, blue=0)
+    selection_foreground: typing.Union[kitty.rgb.Color, None] = Color(red=0, green=0, blue=0)
     shell: str = '.'
     single_window_margin_width: FloatEdges = FloatEdges(left=-1.0, top=-1.0, right=-1.0, bottom=-1.0)
-    startup_session: typing.Optional[str] = None
+    startup_session: typing.Union[str, None] = None
     strip_trailing_spaces: choices_for_strip_trailing_spaces = 'never'
     sync_to_monitor: bool = True
-    tab_activity_symbol: typing.Optional[str] = None
-    tab_bar_background: typing.Optional[kitty.rgb.Color] = None
+    tab_activity_symbol: typing.Union[str, None] = None
+    tab_bar_background: typing.Union[kitty.rgb.Color, None] = None
     tab_bar_edge: int = 3
     tab_bar_margin_height: TabBarMarginHeight = TabBarMarginHeight(outer=0, inner=0)
     tab_bar_margin_width: float = 0
