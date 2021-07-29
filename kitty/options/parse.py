@@ -100,6 +100,9 @@ class Parser:
     def bold_font(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
         ans['bold_font'] = str(val)
 
+    def bold_is_bright(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
+        ans['bold_is_bright'] = to_bool(val)
+
     def bold_italic_font(self, val: str, ans: typing.Dict[str, typing.Any]) -> None:
         ans['bold_italic_font'] = str(val)
 

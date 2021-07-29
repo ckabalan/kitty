@@ -41,6 +41,7 @@ from .constants import (
     wakeup_io_loop,
 )
 from .fast_data_types import (
+    BOLD,
     BGIMAGE_PROGRAM,
     BLIT_PROGRAM,
     CELL_BG_PROGRAM,
@@ -389,6 +390,7 @@ class LoadShaderPrograms:
                 STRIKE_SHIFT=STRIKETHROUGH,
                 DIM_SHIFT=DIM,
                 DECORATION_SHIFT=DECORATION,
+                BOLD_SHIFT=BOLD,
                 MARK_SHIFT=MARK,
                 MARK_MASK=MARK_MASK,
                 DECORATION_MASK=DECORATION_MASK,

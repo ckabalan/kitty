@@ -292,6 +292,7 @@ cell_update_uniform_block(ssize_t vao_idx, Screen *screen, int uniform_buffer, c
         GLfloat xstart, ystart, dx, dy, sprite_dx, sprite_dy, background_opacity, use_cell_bg_for_selection_fg, use_cell_fg_for_selection_color, use_cell_for_selection_bg;
 
         GLuint default_fg, default_bg, highlight_fg, highlight_bg, cursor_fg, cursor_bg, url_color, url_style, inverted;
+        GLuint bold_is_bright;
 
         GLuint xnum, ynum, cursor_fg_sprite_idx;
         GLfloat cursor_x, cursor_y, cursor_w;
@@ -367,6 +368,7 @@ cell_update_uniform_block(ssize_t vao_idx, Screen *screen, int uniform_buffer, c
     rd->sprite_dx = 1.0f / (float)x; rd->sprite_dy = 1.0f / (float)y;
     rd->inverted = inverted ? 1 : 0;
     rd->background_opacity = os_window->is_semi_transparent ? os_window->background_opacity : 1.0f;
+    rd->bold_is_bright = OPT(bold_is_bright) ? 1 : 0;
 
 #undef COLOR
     rd->url_color = OPT(url_color); rd->url_style = OPT(url_style);

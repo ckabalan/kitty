@@ -61,6 +61,11 @@ opt('font_size', '11.0',
     long_text='Font size (in pts)'
     )
 
+opt('bold_is_bright', 'no',
+    option_type='to_bool', ctype='bool',
+    long_text='Display bold text with bright colors'
+    )
+
 opt('force_ltr', 'no',
     option_type='to_bool', ctype='bool',
     long_text='''

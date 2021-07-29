@@ -71,6 +71,7 @@ option_names = (  # {{{
  'bell_on_tab',
  'bell_path',
  'bold_font',
+ 'bold_is_bright',
  'bold_italic_font',
  'box_drawing_scale',
  'clear_all_mouse_actions',
@@ -488,6 +489,7 @@ class Options:
     bell_on_tab: str = '🔔 '
     bell_path: typing.Optional[str] = None
     bold_font: str = 'auto'
+    bold_is_bright: bool = False
     bold_italic_font: str = 'auto'
     box_drawing_scale: typing.Tuple[float, float, float, float] = (0.001, 1.0, 1.5, 2.0)
     clear_all_mouse_actions: bool = False
