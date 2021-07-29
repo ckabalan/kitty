@@ -1,3 +1,23 @@
+= kitty - But with the bold_is_bright option!
+
+**Instructions**: Compile the `brightbolds` branch from source. Add `bold_is_bright yes` to your `kitty.conf`.
+
+**Why**: The main developer of Kitty does not want to include the option to
+render bold text in brighter colors as is common for many terminal emulators.
+This is detailed in https://github.com/kovidgoyal/kitty/issues/512[kovidgoyal/kitty Issue #512 - Render bold text in bright color].
+There was a fork project developed, https://github.com/KittyPatch/kitty[KittyPatch]
+which added this functionality and appears to be abandoned as it is no longer
+updated nor do they respond to pull requests. I have decided to maintain my
+own fork here.
+
+**How**: Every few releases of the official Kitty project I will re-apply the
+technical changes from the KittyPatch project on top of the original Kitty
+code. The essence of these changes can be seen in commit https://github.com/ckabalan/kitty/commit/18876527f575cf995aa664bf2da22d9c13f28f58[1887652].
+I will create a branch matching `[release-tag]-BrightBolds` and keep the
+default `brightbolds` branch up to date with the latest release.
+
+Original README is as below:
+
 = kitty - the fast, feature-rich, cross-platform, GPU based terminal
 
 See https://sw.kovidgoyal.net/kitty/[the kitty website].
