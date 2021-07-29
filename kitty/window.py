@@ -21,6 +21,7 @@ from .cli_stub import CLIOptions
 from .config import build_ansi_color_table
 from .constants import appname, is_macos, wakeup
 from .fast_data_types import (
+    BOLD,
     BGIMAGE_PROGRAM, BLIT_PROGRAM, CELL_BG_PROGRAM, CELL_FG_PROGRAM,
     CELL_PROGRAM, CELL_SPECIAL_PROGRAM, CURSOR_BEAM, CURSOR_BLOCK,
     CURSOR_UNDERLINE, DCS, DECORATION, DIM, GLFW_MOD_CONTROL,
@@ -225,6 +226,7 @@ class LoadShaderPrograms:
                     'STRIKE_SHIFT': STRIKETHROUGH,
                     'DIM_SHIFT': DIM,
                     'DECORATION_SHIFT': DECORATION,
+                    'BOLD_SHIFT': BOLD,
                     'MARK_SHIFT': MARK,
                     'MARK_MASK': MARK_MASK,
             }.items():

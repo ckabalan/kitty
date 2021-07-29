@@ -59,6 +59,7 @@ option_names = (  # {{{
  'bell_border_color',
  'bell_on_tab',
  'bold_font',
+ 'bold_is_bright',
  'bold_italic_font',
  'box_drawing_scale',
  'clear_all_shortcuts',
@@ -451,6 +452,7 @@ class Options:
     bell_border_color: Color = Color(red=255, green=90, blue=0)
     bell_on_tab: bool = True
     bold_font: str = 'auto'
+    bold_is_bright: bool = False
     bold_italic_font: str = 'auto'
     box_drawing_scale: typing.Tuple[float, float, float, float] = (0.001, 1.0, 1.5, 2.0)
     clear_all_shortcuts: bool = False
